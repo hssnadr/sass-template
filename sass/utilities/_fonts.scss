@@ -1,0 +1,15 @@
+@use "../abstracts" as *;
+
+:root {
+    // Font sizes: --fs-600: 1.3rem;
+    @each $size-id, $size-val in $font-sizes {
+        --fs-#{$size-id}: #{$size-val};
+    }
+}
+
+// class: .font-size-300
+@each $size-id, $size-val in $font-sizes {
+    .font-size-#{$size-id} {
+        font-size: $size-val;
+    }
+}

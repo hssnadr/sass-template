@@ -1,0 +1,22 @@
+@use "sass:color";
+
+// Color swatch
+$color-white: #fff;
+$color-black: #000;
+$color-blue: #00f;
+
+// Colors
+$colors: (
+    neutral: (
+        100: $color-white,
+        900: $color-black
+        ),
+    primary: (
+        100: $color-white,
+        900: $color-black
+        ),
+    accent: (
+        500: $color-blue,
+        700: red
+        )
+);

@@ -1,0 +1,66 @@
+@use "../abstracts" as *;
+
+:root {
+    // Spaces: --space-300: 0.75rem;
+    @each $space-id,
+    $space-val in $sizes {
+        --space-#{$space-id}: #{$space-val};
+    }
+}
+
+
+@each $size-id, $size-val in $sizes {
+  .margin {
+    // margin
+    &-#{$size-id} {
+      margin: $size-val;
+    }
+    // margin left based on text direction
+    &-block-start-#{$size-id} {
+      margin-block-start: $size-val;
+    }
+    // margin right based on text direction
+    &-block-end-#{$size-id} {
+      margin-block-end: $size-val;
+    }
+    // margin left & right based on text direction
+    &-block-#{$size-id} {
+      margin-block: $size-val;
+    }
+    // margin top based on text direction
+    &-inline-start-#{$size-id} {
+      margin-inline-start: $size-val;
+    }
+    // margin bottom based on text direction
+    &-inline-end-#{$size-id} {
+      margin-inline-end: $size-val;
+    }
+    // margin top & bottom based on text direction
+    &-inline-#{$size-id} {
+      margin-inline: $size-val;
+    }
+  }
+  .padding {
+    &-#{$size-id} {
+      padding: $size-val;
+    }
+    &-block-start-#{$size-id} {
+      padding-block-start: $size-val;
+    }
+    &-block-end-#{$size-id} {
+      padding-block-end: $size-val;
+    }
+    &-block-#{$size-id} {
+      padding-block: $size-val;
+    }
+    &-inline-start-#{$size-id} {
+      padding-inline-start: $size-val;
+    }
+    &-inline-end-#{$size-id} {
+      padding-inline-end: $size-val;
+    }
+    &-inline-#{$size-id} {
+      padding-inline: $size-val;
+    }
+  }
+}

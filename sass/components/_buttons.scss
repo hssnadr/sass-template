@@ -1,0 +1,64 @@
+@use '../abstracts' as *;
+
+$btn-styles: (
+    default:(
+        normal:(
+            txt-color: get-color(accent, 700),
+            bg-color: get-color(accent, 500)
+        ),
+        hover:(
+            txt-color: get-color(accent, 500),
+            bg-color: get-color(accent, 700)
+        )
+    ),
+    shade-grey:(
+        normal:(
+            txt-color: grey,
+            bg-color: lightgrey
+        ),
+        hover:(
+            txt-color: lightgrey,
+            bg-color: grey
+        ),
+        focus:(
+            txt-color: red,
+            bg-color: grey
+        )
+    )
+);
+
+@mixin btn-style($style) {
+    $style_: map-get($btn-styles, $style);
+
+    @each $state, $state-style in $style_ {
+        @if($state == 'normal') {
+            color: map-get($state-style, txt-color);
+            background-color: map-get($state-style, bg-color);
+        } @else {
+            &:#{$state} {
+                color: map-get($state-style, txt-color);
+                background-color: map-get($state-style, bg-color);
+            }
+        }
+    }
+}
+
+.btn {
+    // background-color: #001534;
+    // color: black;
+    padding: 1.5rem;
+    @include btn-style("default");
+
+    // color: get-color(accent, 700);
+    // background-color: get-color(accent, 500);
+}
+
+.btn-wide {
+    width: 100%;
+    @include btn-style("shade-grey");
+}
+
+/* And... */
+.btn-rounded {
+    border-radius: 3rem;
+}

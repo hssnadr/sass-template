@@ -1,0 +1,37 @@
+$txt-input-style: (
+    active: (
+        bg: darkgrey,
+        border: dimgrey,
+        txt: dimgrey,
+
+    ),
+    focus: (
+        bg: dimgrey,
+        border: darkgrey,
+        txt: darkgrey,
+    ),
+    invalid: (
+        bg: darkgrey,
+        border: red,
+        txt: red,
+    )
+);
+
+@mixin txt-input-styles {
+    @each $state, $state-style in $txt-input-style {
+        &:#{$state} {
+            border: .1rem solid map-get($state-style, border);
+            background-color: map-get($state-style, bg);
+            color: map-get($state-style, txt);
+        }
+    }
+}
+
+.form {
+    &__field {
+        & input {
+            color: green;
+            @include txt-input-styles;
+        }
+    }
+}

@@ -1,0 +1,657 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,500;0,700;0,800;0,900;1,200;1,500;1,700;1,800;1,900&display=swap"); /* https://piccalil.li/blog/a-modern-css-reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+*::before,
+*::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+:root {
+  --color-neutral-100: #fff;
+  --color-neutral-900: #000;
+  --color-primary-100: #fff;
+  --color-primary-900: #000;
+  --color-accent-500: #00f;
+  --color-accent-700: red;
+}
+
+.bg-neutral-100 {
+  background-color: #fff;
+}
+
+.bg-neutral-900 {
+  background-color: #000;
+}
+
+.bg-primary-100 {
+  background-color: #fff;
+}
+
+.bg-primary-900 {
+  background-color: #000;
+}
+
+.bg-accent-500 {
+  background-color: #00f;
+}
+
+.bg-accent-700 {
+  background-color: red;
+}
+
+.bg-grey-100 {
+  background-color: white;
+}
+
+.bg-grey-200 {
+  background-color: #dfdfdf;
+}
+
+.bg-grey-300 {
+  background-color: #bfbfbf;
+}
+
+.bg-grey-400 {
+  background-color: #9f9f9f;
+}
+
+.bg-grey-500 {
+  background-color: gray;
+}
+
+.bg-grey-600 {
+  background-color: #606060;
+}
+
+.bg-grey-700 {
+  background-color: #404040;
+}
+
+.bg-grey-800 {
+  background-color: #202020;
+}
+
+.bg-grey-900 {
+  background-color: black;
+}
+
+:root {
+  --space-100: 0.25rem;
+  --space-300: 0.75rem;
+  --space-500: 1.5rem;
+  --space-700: 2.5rem;
+  --space-900: 4rem;
+}
+
+.margin-100 {
+  margin: 0.25rem;
+}
+.margin-block-start-100 {
+  -webkit-margin-before: 0.25rem;
+          margin-block-start: 0.25rem;
+}
+.margin-block-end-100 {
+  -webkit-margin-after: 0.25rem;
+          margin-block-end: 0.25rem;
+}
+.margin-block-100 {
+  margin-block: 0.25rem;
+}
+.margin-inline-start-100 {
+  -webkit-margin-start: 0.25rem;
+          margin-inline-start: 0.25rem;
+}
+.margin-inline-end-100 {
+  -webkit-margin-end: 0.25rem;
+          margin-inline-end: 0.25rem;
+}
+.margin-inline-100 {
+  margin-inline: 0.25rem;
+}
+
+.padding-100 {
+  padding: 0.25rem;
+}
+.padding-block-start-100 {
+  -webkit-padding-before: 0.25rem;
+          padding-block-start: 0.25rem;
+}
+.padding-block-end-100 {
+  -webkit-padding-after: 0.25rem;
+          padding-block-end: 0.25rem;
+}
+.padding-block-100 {
+  padding-block: 0.25rem;
+}
+.padding-inline-start-100 {
+  -webkit-padding-start: 0.25rem;
+          padding-inline-start: 0.25rem;
+}
+.padding-inline-end-100 {
+  -webkit-padding-end: 0.25rem;
+          padding-inline-end: 0.25rem;
+}
+.padding-inline-100 {
+  padding-inline: 0.25rem;
+}
+
+.margin-300 {
+  margin: 0.75rem;
+}
+.margin-block-start-300 {
+  -webkit-margin-before: 0.75rem;
+          margin-block-start: 0.75rem;
+}
+.margin-block-end-300 {
+  -webkit-margin-after: 0.75rem;
+          margin-block-end: 0.75rem;
+}
+.margin-block-300 {
+  margin-block: 0.75rem;
+}
+.margin-inline-start-300 {
+  -webkit-margin-start: 0.75rem;
+          margin-inline-start: 0.75rem;
+}
+.margin-inline-end-300 {
+  -webkit-margin-end: 0.75rem;
+          margin-inline-end: 0.75rem;
+}
+.margin-inline-300 {
+  margin-inline: 0.75rem;
+}
+
+.padding-300 {
+  padding: 0.75rem;
+}
+.padding-block-start-300 {
+  -webkit-padding-before: 0.75rem;
+          padding-block-start: 0.75rem;
+}
+.padding-block-end-300 {
+  -webkit-padding-after: 0.75rem;
+          padding-block-end: 0.75rem;
+}
+.padding-block-300 {
+  padding-block: 0.75rem;
+}
+.padding-inline-start-300 {
+  -webkit-padding-start: 0.75rem;
+          padding-inline-start: 0.75rem;
+}
+.padding-inline-end-300 {
+  -webkit-padding-end: 0.75rem;
+          padding-inline-end: 0.75rem;
+}
+.padding-inline-300 {
+  padding-inline: 0.75rem;
+}
+
+.margin-500 {
+  margin: 1.5rem;
+}
+.margin-block-start-500 {
+  -webkit-margin-before: 1.5rem;
+          margin-block-start: 1.5rem;
+}
+.margin-block-end-500 {
+  -webkit-margin-after: 1.5rem;
+          margin-block-end: 1.5rem;
+}
+.margin-block-500 {
+  margin-block: 1.5rem;
+}
+.margin-inline-start-500 {
+  -webkit-margin-start: 1.5rem;
+          margin-inline-start: 1.5rem;
+}
+.margin-inline-end-500 {
+  -webkit-margin-end: 1.5rem;
+          margin-inline-end: 1.5rem;
+}
+.margin-inline-500 {
+  margin-inline: 1.5rem;
+}
+
+.padding-500 {
+  padding: 1.5rem;
+}
+.padding-block-start-500 {
+  -webkit-padding-before: 1.5rem;
+          padding-block-start: 1.5rem;
+}
+.padding-block-end-500 {
+  -webkit-padding-after: 1.5rem;
+          padding-block-end: 1.5rem;
+}
+.padding-block-500 {
+  padding-block: 1.5rem;
+}
+.padding-inline-start-500 {
+  -webkit-padding-start: 1.5rem;
+          padding-inline-start: 1.5rem;
+}
+.padding-inline-end-500 {
+  -webkit-padding-end: 1.5rem;
+          padding-inline-end: 1.5rem;
+}
+.padding-inline-500 {
+  padding-inline: 1.5rem;
+}
+
+.margin-700 {
+  margin: 2.5rem;
+}
+.margin-block-start-700 {
+  -webkit-margin-before: 2.5rem;
+          margin-block-start: 2.5rem;
+}
+.margin-block-end-700 {
+  -webkit-margin-after: 2.5rem;
+          margin-block-end: 2.5rem;
+}
+.margin-block-700 {
+  margin-block: 2.5rem;
+}
+.margin-inline-start-700 {
+  -webkit-margin-start: 2.5rem;
+          margin-inline-start: 2.5rem;
+}
+.margin-inline-end-700 {
+  -webkit-margin-end: 2.5rem;
+          margin-inline-end: 2.5rem;
+}
+.margin-inline-700 {
+  margin-inline: 2.5rem;
+}
+
+.padding-700 {
+  padding: 2.5rem;
+}
+.padding-block-start-700 {
+  -webkit-padding-before: 2.5rem;
+          padding-block-start: 2.5rem;
+}
+.padding-block-end-700 {
+  -webkit-padding-after: 2.5rem;
+          padding-block-end: 2.5rem;
+}
+.padding-block-700 {
+  padding-block: 2.5rem;
+}
+.padding-inline-start-700 {
+  -webkit-padding-start: 2.5rem;
+          padding-inline-start: 2.5rem;
+}
+.padding-inline-end-700 {
+  -webkit-padding-end: 2.5rem;
+          padding-inline-end: 2.5rem;
+}
+.padding-inline-700 {
+  padding-inline: 2.5rem;
+}
+
+.margin-900 {
+  margin: 4rem;
+}
+.margin-block-start-900 {
+  -webkit-margin-before: 4rem;
+          margin-block-start: 4rem;
+}
+.margin-block-end-900 {
+  -webkit-margin-after: 4rem;
+          margin-block-end: 4rem;
+}
+.margin-block-900 {
+  margin-block: 4rem;
+}
+.margin-inline-start-900 {
+  -webkit-margin-start: 4rem;
+          margin-inline-start: 4rem;
+}
+.margin-inline-end-900 {
+  -webkit-margin-end: 4rem;
+          margin-inline-end: 4rem;
+}
+.margin-inline-900 {
+  margin-inline: 4rem;
+}
+
+.padding-900 {
+  padding: 4rem;
+}
+.padding-block-start-900 {
+  -webkit-padding-before: 4rem;
+          padding-block-start: 4rem;
+}
+.padding-block-end-900 {
+  -webkit-padding-after: 4rem;
+          padding-block-end: 4rem;
+}
+.padding-block-900 {
+  padding-block: 4rem;
+}
+.padding-inline-start-900 {
+  -webkit-padding-start: 4rem;
+          padding-inline-start: 4rem;
+}
+.padding-inline-end-900 {
+  -webkit-padding-end: 4rem;
+          padding-inline-end: 4rem;
+}
+.padding-inline-900 {
+  padding-inline: 4rem;
+}
+
+.container {
+  width: min(100% - var(--space-900), 60rem);
+  margin-inline: auto;
+}
+
+:root {
+  --fs-300: 0.8125rem;
+  --fs-400: 0.875rem;
+  --fs-500: 1rem;
+  --fs-600: 1.3rem;
+  --fs-700: 1.875rem;
+  --fs-800: 2.5rem;
+  --fs-900: 3.5rem;
+}
+
+.font-size-300 {
+  font-size: 0.8125rem;
+}
+
+.font-size-400 {
+  font-size: 0.875rem;
+}
+
+.font-size-500 {
+  font-size: 1rem;
+}
+
+.font-size-600 {
+  font-size: 1.3rem;
+}
+
+.font-size-700 {
+  font-size: 1.875rem;
+}
+
+.font-size-800 {
+  font-size: 2.5rem;
+}
+
+.font-size-900 {
+  font-size: 3.5rem;
+}
+
+.btn {
+  padding: 1.5rem;
+  color: red;
+  background-color: #00f;
+}
+.btn:hover {
+  color: #00f;
+  background-color: red;
+}
+
+.btn-wide {
+  width: 100%;
+  color: grey;
+  background-color: lightgrey;
+}
+.btn-wide:hover {
+  color: lightgrey;
+  background-color: grey;
+}
+.btn-wide:focus {
+  color: red;
+  background-color: grey;
+}
+
+/* And... */
+.btn-rounded {
+  border-radius: 3rem;
+}
+
+.primary-nav {
+  padding-right: 6rem;
+  text-align: right;
+}
+.primary-nav__link {
+  font-size: 1.5rem;
+  padding-left: 1.5rem;
+}
+.primary-nav__link a {
+  text-decoration: none;
+  color: #D6FFF5;
+}
+.primary-nav__link a:hover {
+  color: #fff;
+}
+.primary-nav__link--active a {
+  color: #001534;
+}
+
+.form__field input {
+  color: green;
+}
+.form__field input:active {
+  border: 0.1rem solid dimgrey;
+  background-color: darkgrey;
+  color: dimgrey;
+}
+.form__field input:focus {
+  border: 0.1rem solid darkgrey;
+  background-color: dimgrey;
+  color: darkgrey;
+}
+.form__field input:invalid {
+  border: 0.1rem solid red;
+  background-color: darkgrey;
+  color: red;
+}
+
+/* From: https://codepen.io/onion2k/pen/xxZYBVj */
+#carousel3d {
+  height: 600px;
+  margin: 0;
+  display: grid;
+  grid-template-rows: 500px 100px;
+  grid-template-columns: 1fr 30px 30px 30px 30px 30px 1fr;
+  align-items: center;
+  justify-items: center;
+  /* Inputs radio buttons*/
+}
+#carousel3d main#carousel {
+  grid-row: 1/2;
+  grid-column: 1/8;
+  width: 100vw;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  perspective: 600px;
+  --items: 5;
+  --middle: 3;
+  --position: 1;
+  pointer-events: none;
+}
+#carousel3d div.item {
+  position: absolute;
+  width: 300px;
+  height: 400px;
+  background-color: coral;
+  --r: calc(var(--position) - var(--offset));
+  --abs: max(calc(var(--r) * -1), var(--r));
+  transition: all 0.25s linear;
+  transform: rotateY(calc(-10deg * var(--r))) translateX(calc(-300px * var(--r)));
+  z-index: calc(var(--position) - var(--abs));
+  margin: 2rem 0;
+}
+#carousel3d div.item:nth-of-type(1) {
+  --offset: 1;
+  background-color: #90f1ef;
+}
+#carousel3d div.item:nth-of-type(2) {
+  --offset: 2;
+  background-color: #ff70a6;
+}
+#carousel3d div.item:nth-of-type(3) {
+  --offset: 3;
+  background-color: #ff9770;
+}
+#carousel3d div.item:nth-of-type(4) {
+  --offset: 4;
+  background-color: #ffd670;
+}
+#carousel3d div.item:nth-of-type(5) {
+  --offset: 5;
+  background-color: #e9ff70;
+}
+#carousel3d input:nth-of-type(1) {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+#carousel3d input:nth-of-type(1):checked ~ main#carousel {
+  --position: 1;
+}
+#carousel3d input:nth-of-type(2) {
+  grid-column: 3/4;
+  grid-row: 2/3;
+}
+#carousel3d input:nth-of-type(2):checked ~ main#carousel {
+  --position: 2;
+}
+#carousel3d input:nth-of-type(3) {
+  grid-column: 4/5;
+  grid-row: 2/3;
+}
+#carousel3d input:nth-of-type(3):checked ~ main#carousel {
+  --position: 3;
+}
+#carousel3d input:nth-of-type(4) {
+  grid-column: 5/6;
+  grid-row: 2/3;
+}
+#carousel3d input:nth-of-type(4):checked ~ main#carousel {
+  --position: 4;
+}
+#carousel3d input:nth-of-type(5) {
+  grid-column: 6/7;
+  grid-row: 2/3;
+}
+#carousel3d input:nth-of-type(5):checked ~ main#carousel {
+  --position: 5;
+}
+
+.heading2 {
+  color: var(--color-accent-700);
+  font-size: var(--fs-900);
+}
+
+.heading3 {
+  color: var(--color-accent-500);
+  font-size: var(--fs-700);
+}
+
+p {
+  font-size: var(--fs-500);
+}
+@media screen and (min-width: 30em) {
+  p {
+    color: red;
+  }
+}
+
+.primary-header {
+  padding: var(--space-500);
+}
+
+.even-columns {
+  display: grid;
+  gap: 1rem;
+}
+@media screen and (min-width: 30em) {
+  .even-columns {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+}
+
+/*
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: white;
+    background: black;
+  }
+}
+
+@media (min-width: 50em) {
+  :root {
+    --fs-body: var(--fs-500);
+    --fs-primary-heading: var(--fs-900);
+    --fs-secondary-heading: var(--fs-800);
+
+    --fs-nav: var(--fs-300);
+  }
+}
+*//*# sourceMappingURL=main.css.map */
