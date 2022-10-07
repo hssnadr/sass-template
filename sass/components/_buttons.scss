@@ -3,25 +3,25 @@
 $btn-styles: (
     default:(
         normal:(
-            txt-color: get-color(accent, 700),
-            bg-color: get-color(accent, 500)
+            tx-color: color(accent, 700),
+            bg-color: color(accent, 500)
         ),
         hover:(
-            txt-color: get-color(accent, 500),
-            bg-color: get-color(accent, 700)
+            tx-color: color(accent, 500),
+            bg-color: color(accent, 700)
         )
     ),
     shade-grey:(
         normal:(
-            txt-color: grey,
+            tx-color: grey,
             bg-color: lightgrey
         ),
         hover:(
-            txt-color: lightgrey,
+            tx-color: lightgrey,
             bg-color: grey
         ),
         focus:(
-            txt-color: red,
+            tx-color: red,
             bg-color: grey
         )
     )
@@ -32,11 +32,11 @@ $btn-styles: (
 
     @each $state, $state-style in $style_ {
         @if($state == 'normal') {
-            color: map-get($state-style, txt-color);
+            color: map-get($state-style, tx-color);
             background-color: map-get($state-style, bg-color);
         } @else {
             &:#{$state} {
-                color: map-get($state-style, txt-color);
+                color: map-get($state-style, tx-color);
                 background-color: map-get($state-style, bg-color);
             }
         }

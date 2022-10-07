@@ -1,31 +1,13 @@
 @use "sass:math";
 @use "../abstracts" as *;
 
-:root {
-    // Colors: --color-accent-500: #00f;
-    @each $color-name,
-    $shades in $colors {
-
-        @each $shade-name,
-        $shade-value in $shades {
-            --color-#{$color-name}-#{$shade-name}: #{$shade-value};
-        }
-    }
-}
-
 @each $color, $shades in $colors {
     @each $shade-id, $shade-val in $shades {
+        .clr-#{$color}-#{$shade} {
+            color: $value;
+        }
         .bg-#{$color}-#{$shade-id} {
             background-color: #{$shade-val};
         }
-    }
-}
-
-// Shades of grey from white to black
-@for $i from 1 through 9 {
-    .bg-grey {
-      &-#{$i}00 {
-        background-color: lighten(black, 1% * 100*math.div(9-$i, 8));
-      }
     }
 }

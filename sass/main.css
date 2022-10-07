@@ -58,15 +58,6 @@ svg {
     scroll-behavior: auto !important;
   }
 }
-:root {
-  --color-neutral-100: #fff;
-  --color-neutral-900: #000;
-  --color-primary-100: #fff;
-  --color-primary-900: #000;
-  --color-accent-500: #00f;
-  --color-accent-700: red;
-}
-
 .bg-neutral-100 {
   background-color: #fff;
 }
