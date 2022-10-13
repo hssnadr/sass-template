@@ -20,7 +20,7 @@ $colors: (
         500: $color-blue,
         700: red
         ),
-    grey: (
+    shade: (
         100: white,
         200: lighten(black, 1% * 100*math.div(7, 8)),
         300: lighten(black, 1% * 100*math.div(6, 8)),

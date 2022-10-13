@@ -1,0 +1,115 @@
+@use "sass:math";
+
+// From: https://openclassrooms.com/fr/courses/5919246-creez-des-animations-css-modernes/6340941-manipulez-et-reutilisez-les-animations-css
+
+$cd-bars: #15DEA5;
+$cd-bars-inv: #0E397F;
+$size: 3vh;
+$anim-dur: 1000ms;
+$anim-delay: math.div($anim-dur, 5);
+
+.load {
+    margin: auto;
+    width: $size*10;
+    height: $size*7.5;
+    display: flex;
+    justify-content: space-evenly;
+
+    &__bar {
+        background-color: #15DEA5;
+        height: 100%;
+        width: $size;
+        animation: bars $anim-dur backwards infinite ease-in-out alternate;
+
+        @for $i from 1 through 5 {
+            &--#{$i} {
+                animation-delay: $anim-delay * $i;
+            }
+            &--#{$i}-inv {
+                animation-delay: $anim-delay * $i;
+                // animation-delay: $anim-delay * $i + random(100)*15ms;
+                animation-direction: alternate-reverse;
+                animation-fill-mode: forwards;
+                background-color: $cd-bars-inv;
+                &:hover {
+                    animation-play-state: paused;
+                }
+            }
+        }
+    }
+}
+
+
+@keyframes bars {
+    0% {
+        transform: scaleY(0.5);
+    }
+    100% {
+        transform: scaleY(1.0);
+    }
+}
+
+.progress {
+    width: 100%;
+    height: 4rem;
+    border: solid;
+
+    &__bar {
+        width: 100%;
+        height: 100%;
+        transform-origin: left;
+        transform: scaleX(0);
+        animation: progress-bar 1000ms 200ms;
+        animation-fill-mode: both; // keep value at the end of the animation (backwards: keep before, both: both)
+    }
+}
+
+@keyframes progress-bar {
+	0% {
+		transform: scaleX(0);
+	}
+	17% {
+		transform: scaleX(0.18);
+	}
+	24% {
+		transform: scaleX(0.4);
+		animation-timing-function: cubic-bezier(0.9, 0, 0.1, 1);
+	}
+	46% {
+		transform: scaleX(0.81);
+		animation-timing-function: cubic-bezier(0.25, 0.25, 1);
+	}
+	100% {
+		transform: scaleX(1);
+	}
+}
+
+.cat {
+    animation: cat 0ms 1000ms both;
+	width: 100%;
+	height: 30vw;
+	position: absolute;
+	overflow: hidden;
+	background-image: url("https://bit.ly/2XJJLKn");
+    // background-color: blue;
+	background-size: cover;
+	background-position: -20%;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.1rem;
+	font-size: 4vw;
+	font-weight: 900;
+	color: white;
+}
+
+@keyframes cat {
+	0% {
+		transform: translateX(-9999px);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}

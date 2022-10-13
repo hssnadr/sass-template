@@ -3,11 +3,15 @@
 
 @each $color, $shades in $colors {
     @each $shade-id, $shade-val in $shades {
-        .clr-#{$color}-#{$shade} {
-            color: $value;
+        .clr-#{$color}-#{$shade-id} {
+            color: $shade-val;
         }
         .bg-#{$color}-#{$shade-id} {
             background-color: #{$shade-val};
+        }
+
+        .brd-#{$color}-#{$shade-id} {
+            border-color: #{$shade-val};
         }
     }
 }
